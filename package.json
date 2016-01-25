@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "An Angular ToDo Web App with User Authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duncanleung/todo.git"
+  },
+  "author": "Duncan Leung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/duncanleung/todo/issues"
+  },
+  "homepage": "https://github.com/duncanleung/todo#readme",
+  "dependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4"
+  }
+}
