@@ -1,7 +1,8 @@
 var config = require('./config');
 
 var express = require('express'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    passport = require('passport');
 
 module.exports = function() {
   var app = express();
@@ -11,6 +12,9 @@ module.exports = function() {
 
   app.set('views', './app/views');
   app.set('view engine', 'ejs');
+
+  app.use(passport.initialize());
+  app.use(passport.session());
 
   // Routes
   require('../app/routes/index.server.routes.js')(app);
