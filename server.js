@@ -1,6 +1,13 @@
-var port = 3000;
-var express = require('./config/express');
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
+var config = require('./config/config'),
+    mongoose = require('./config/mongoose'),
+    express = require('./config/express');
+
+var db = mongoose();
 var app = express();
-app.listen(port);
+
+app.listen(config.port);
+
 module.exports = app;
-console.log('Server on port', port);
+console.log(process.env.NODE_ENV + ' server on port', config.port);

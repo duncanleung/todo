@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/duncanleung/todo#readme",
   "dependencies": {
+    "body-parser": "^1.14.2",
     "ejs": "^2.4.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "mongoose": "^4.3.7"
   }
 }
