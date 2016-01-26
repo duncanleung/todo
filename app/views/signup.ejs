@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="http://getbootstrap.com/examples/signin/signin.css">
+  </head>
+  <body>
+    <% for(var i in messages) { %>
+      <div class="flash">
+        <%= messages[i] %>
+      </div>
+      <% } %>
+
+    <div class="container">
+      <form class="form-signin" action="/register" method="post">
+        <h2 class="form-signin-heading text-center">Get To Do for Free</h2>
+
+        <label for="name" class="sr-only">Name</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Full Name" required autofocus>
+
+        <label for="username" class="sr-only">Username</label>
+        <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
+
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      </form>
+
+      <div class="row">
+        <div class="center-block text-center">
+          <a href="/oauth/facebook">Login with Facebook</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
