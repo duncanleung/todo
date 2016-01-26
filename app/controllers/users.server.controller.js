@@ -1,7 +1,7 @@
 // Handle all requests for user related operations
 
 var User = require('mongoose').model('User'),
-    passport = require(passport);
+    passport = require('passport');
 
 var getErrorMessage = function(err) {
   var message = '';
@@ -12,7 +12,7 @@ var getErrorMessage = function(err) {
         message = 'Username already exists';
         break;
       default:
-        message = 'Something went wrong';
+        message = 'Something went wrong. Please contact tech support.';
     }
   }
   else {
@@ -27,8 +27,8 @@ var getErrorMessage = function(err) {
 
 exports.renderRegister = function(req, res, next) {
   if(!req, user) {
-    res.render('register', {
-      title: 'Register Form',
+    res.render('signup', {
+      title: 'Signup for To Do',
       messages: req.flash('error')
     });
   }
@@ -56,6 +56,18 @@ exports.register = function(req, res, next) {
         }
         return res.redirect('/');
       });
+    });
+  }
+  else {
+    return res.redirect('/');
+  }
+};
+
+exports.renderLogin = function(req, res, next) {
+  if(!req.user) {
+    res.render('login', {
+      title: 'Login Form',
+      messages: req.flash('error') || req.flash('info')
     });
   }
   else {
