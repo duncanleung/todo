@@ -26,7 +26,7 @@ var getErrorMessage = function(err) {
 };
 
 exports.renderRegister = function(req, res, next) {
-  if(!req, user) {
+  if(!req.user) {
     res.render('signup', {
       title: 'Signup for To Do',
       messages: req.flash('error')

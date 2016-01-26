@@ -1,3 +1,4 @@
+var passport = require('passport');
 var users = require('../../app/controllers/users.server.controller');
 
 module.exports = function(app) {
@@ -11,4 +12,18 @@ module.exports = function(app) {
     .delete(users.delete);
 
   app.param('userId', users.userById);
+
+  app.route('/register')
+    .get(users.renderRegister)
+    .post(users.register);
+
+  app.route('/login')
+    .get(users.renderLogin)
+    .post(passport.authenticate('local', {
+      successRedirect: '/',
+      failureRedirect: '/login',
+      failureFlash: true
+    }));
+
+  app.get('/logout', users.logout);
 };
