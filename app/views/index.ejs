@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>
-      <%= title %>
-    </title>
-  </head>
-  <body>
-    <h1>
-    <%= title %>
-  </h1>
-  <% if(user) { %>
-    <h2>Hello <%= user %></h2>
+<head>
+    <title><%= title %></title>
+</head>
+
+<body>
+    <h1><%= title %></h1>
+
+    <% if ( user ) { %>
+    <h2>Hello <%=user%> </h2>
     <a href="/logout">Logout</a>
   <% } else { %>
-    <a href="/register">Register</a>
+    <a href="/signup">Sign Up</a>
     <a href="/login">Login</a>
   <% } %>
-  </body>
+</body>
 </html>

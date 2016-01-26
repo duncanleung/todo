@@ -1,22 +1,24 @@
-var config = require('./config');
-
-var express = require('express'),
+var config = require('./config'),
+    express = require('express'),
     bodyParser = require('body-parser'),
     passport = require('passport'),
+    flash = require('connect-flash'),
     session = require('express-session'),
-    flash = require('connect-flash');
+    morgan = require('morgan');
 
 module.exports = function() {
   var app = express();
 
+  app.use(morgan('dev'));
+  
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+
   app.use(session({
     saveUninitialized: true,
     resave: true,
-    secret: 'orangecountycodeschoolallcodeallday'
+    secret: 'orangecountcodeschoolallcodeallday'
   }));
-
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(bodyParser.json());
 
   app.set('views', './app/views');
   app.set('view engine', 'ejs');
@@ -32,4 +34,4 @@ module.exports = function() {
   app.use(express.static('./public'));
 
   return app;
-}
+};

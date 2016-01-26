@@ -1,21 +1,16 @@
-var passport = require('passport');
-var users = require('../../app/controllers/users.server.controller');
+var users = require('../../app/controllers/users.server.controller'),
+  passport = require('passport');
 
 module.exports = function(app) {
-  app.route('/users')
-    .post(users.create)
-    .get(users.list);
+  app.route('/users').post(users.create).get(users.list);
 
-  app.route('/users/:userId')
-    .get(users.read)
-    .put(users.update)
-    .delete(users.delete);
+  app.route('/users/:userId').get(users.read).put(users.update).delete(users.delete);
 
-  app.param('userId', users.userById);
+  app.param('userId', users.userByID);
 
-  app.route('/register')
-    .get(users.renderRegister)
-    .post(users.register);
+  app.route('/signup')
+    .get(users.renderSignup)
+    .post(users.signup);
 
   app.route('/login')
     .get(users.renderLogin)
@@ -26,4 +21,15 @@ module.exports = function(app) {
     }));
 
   app.get('/logout', users.logout);
+
+  app.get('/oauth/facebook', passport.authenticate('facebook', {
+    failureRedirect: '/login',
+    scope:['email']
+  }));
+
+  app.get('/oauth/facebook/callback', passport.authenticate('facebook', {
+    failureRedirect: '/login',
+    successRedirect: '/',
+    scope:['email']
+  }));
 };

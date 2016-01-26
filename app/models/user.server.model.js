@@ -31,26 +31,26 @@ var user = this;
       user.password = hash;
       next();
     });
-  };
+  }
 });
 
 UserSchema.methods.authenticate = function(password) {
   return bcrypt.compareSync(password, this.password);
 };
 
-UserSchema.statics.findUniqeUsername = function(username, suffix, callback) {
+UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
   var _this = this;
   var possibleUsername = username + (suffix || '');
 
   _this.findOne(
-    { username: possibleUsername },
+    {username: possibleUsername},
     function(err, user) {
       if(!err) {
         if(!user) {
           callback(possibleUsername);
         }
         else {
-          return _this.findUniqeUsername(username, (suffix || 0) + 1);
+          return _this.findUniqueUsername(username, (suffix || 0) + 1, callback);
         }
       }
       else {
@@ -60,5 +60,4 @@ UserSchema.statics.findUniqeUsername = function(username, suffix, callback) {
   );
 };
 
-
-module.exports = mongoose.model('User', UserSchema);
+mongoose.model('User', UserSchema);

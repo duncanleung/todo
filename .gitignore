@@ -31,3 +31,6 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+
+#Development Settings and Keys
+config/env/development.js
