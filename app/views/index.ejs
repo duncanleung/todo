@@ -5,14 +5,29 @@
 </head>
 
 <body>
+  <section ng-view></section>
+  
+  <script type="text/javascript">
+    window.user = <%- user || 'null' %>;
+  </script>
+
     <h1><%= title %></h1>
 
     <% if ( user ) { %>
-    <h2>Hello <%=user%> </h2>
+    <h2>Hello <%= user %> </h2>
     <a href="/logout">Logout</a>
   <% } else { %>
     <a href="/signup">Sign Up</a>
     <a href="/login">Login</a>
   <% } %>
+
+  <script type="text/javascript" src="/js/angular/angular.js"></script>
+  <script type="text/javascript" src="/js/angular-route/angular-route.min.js"></script>
+
+  <script type="text/javascript" src="/main/main.client.module.js"></script>
+  <script type="text/javascript" src="/main/config/main.client.routes.js"></script>
+
+  <script type="text/javascript" src="/users/users.client.module.js"></script>
+  <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
 </body>
 </html>

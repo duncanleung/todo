@@ -1,0 +1,18 @@
+{
+  "name": "todo",
+  "description": "An Angular ToDo Web App with User Authentication",
+  "main": "index.js",
+  "authors": [
+    "Duncan Leung"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/duncanleung/todo",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
