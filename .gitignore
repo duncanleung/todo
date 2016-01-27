@@ -34,3 +34,6 @@ node_modules
 
 #Development Settings and Keys
 config/env/development.js
+
+#Ignore Vendor JS Files
+public/js/vendor/*
