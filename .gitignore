@@ -36,4 +36,4 @@ node_modules
 config/env/development.js
 
 #Ignore Vendor JS Files
-public/js/vendor/*
+public/js/vendor/**/*
