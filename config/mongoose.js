@@ -1,3 +1,5 @@
+// Required in server.js
+
 var config = require('./config'),
     mongoose = require('mongoose');
 

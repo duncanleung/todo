@@ -1,3 +1,5 @@
+// Required in server.js
+
 var passport = require('passport'),
     mongoose = require('mongoose');
 

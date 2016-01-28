@@ -1,6 +1,9 @@
+// Required in /app/routes/users.server.routes.js
+
 var User = require('mongoose').model('User'),
   passport = require('passport');
 
+// Return Any Mongoose Errors
 var getErrorMessage = function(err) {
   var message = '';
   if (err.code) {

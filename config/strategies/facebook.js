@@ -1,3 +1,5 @@
+// Required in /app/config/passport.js
+
 var passport = require('passport'),
   url = require('url'),
   FacebookStrategy = require('passport-facebook').Strategy,

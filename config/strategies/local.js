@@ -1,3 +1,5 @@
+// Required in /app/config/passport.js
+
 var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
     User = require('mongoose').model('User');

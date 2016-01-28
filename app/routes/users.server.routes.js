@@ -1,3 +1,5 @@
+// Required in /app/config/express.js
+
 var users = require('../../app/controllers/users.server.controller'),
   passport = require('passport');
 

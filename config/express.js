@@ -1,3 +1,5 @@
+// Required in server.js
+
 var config = require('./config'),
     express = require('express'),
     bodyParser = require('body-parser'),
