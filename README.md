@@ -1,7 +1,14 @@
 # todo
 An Angular ToDo Web App with User Authentication
 
-##To Run an Instance of this App
+**Technologies Used**
+- MongoDB (Mongoose)
+- NodeJS (Express)
+- Angular
+- Bootstrap 3
+
+
+###To Run an Instance of this App
 *(Currently in Development!)*
 
 - Create `config/env/development.js`
@@ -24,4 +31,4 @@ module.exports = {
 
 - Run `npm install` to install backend dependencies
 
-- Start the server with node server.js (*Default: http://localhost:3000*)
+- Start the server with `node server.js` (*Default: http://localhost:3000*)
