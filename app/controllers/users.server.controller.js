@@ -132,29 +132,6 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
   );
 };
 
-exports.create = function(req, res, next) {
-  var user = new User(req.body);
-  user.save(function(err) {
-    if (err) {
-      return next(err);
-    }
-    else {
-      res.json(user);
-    }
-  });
-};
-
-exports.list = function(req, res, next) {
-  User.find({}, function(err, users) {
-    if (err) {
-      return next(err);
-    }
-    else {
-      res.json(users);
-    }
-  });
-};
-
 // Fetch user document and attach to req.user
 // Middleware for app.param
 exports.userByID = function(req, res, next, id) {

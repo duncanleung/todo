@@ -18,10 +18,6 @@ module.exports = function(app) {
 
   app.get('/logout', users.logout);
 
-  app.route('/users')
-    .post(users.create)
-    .get(users.list);
-
   app.route('/users/:userId')
     .get(users.read)
     .put(users.update)
