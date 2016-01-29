@@ -3,7 +3,7 @@
 var User = require('mongoose').model('User'),
   passport = require('passport');
 
-// Return Any Mongoose Errors
+// Return any Mongoose errors
 var getErrorMessage = function(err) {
   var message = '';
   if (err.code) {
@@ -13,7 +13,7 @@ var getErrorMessage = function(err) {
         message = 'Username already exists';
         break;
       default:
-        message = 'Something went wrong';
+        message = 'Something went wrong: ' + err;
     }
   }
   else {
@@ -26,6 +26,19 @@ var getErrorMessage = function(err) {
   return message;
 };
 
+// Middleware to run Passport req.isAuthenticated()
+// If user is not logged in, send 401
+exports.requiresLogin = function(req, res, next) {
+  if(!req.isAuthenticated()) {
+    return res.status(401).send({
+      message: 'User is not logged in.'
+    });
+  }
+  next();
+}
+
+// If user is not logged in then show Login
+// Otherwise redirect to '/' (Angular app)
 exports.renderLogin = function(req, res, next) {
   if (!req.user) {
     res.render('login', {
@@ -38,6 +51,8 @@ exports.renderLogin = function(req, res, next) {
   }
 };
 
+// If user is not logged in then show Signup
+// Otherwise redirect to '/' (Angular app)
 exports.renderSignup = function(req, res, next) {
   if (!req.user) {
     res.render('signup', {
@@ -50,6 +65,7 @@ exports.renderSignup = function(req, res, next) {
   }
 };
 
+// Create new user on POST /signup
 exports.signup = function(req, res, next) {
   if (!req.user) {
     var user = new User(req.body);
@@ -60,10 +76,10 @@ exports.signup = function(req, res, next) {
         var message = getErrorMessage(err);
         req.flash('error', message);
         return res.redirect('/signup');
-      } 
+      }
 
       req.login(user, function(err) {
-        if (err) 
+        if (err)
           return next(err);
         
         return res.redirect('/');
@@ -75,6 +91,7 @@ exports.signup = function(req, res, next) {
   }
 };
 
+// Passport req.logout() and send user back to '/'
 exports.logout = function(req, res) {
   req.logout();
   res.redirect('/');
@@ -115,9 +132,7 @@ exports.saveOAuthUserProfile = function(req, profile, done) {
   );
 };
 
-
-
-exports.create = function(req, res, next) { 
+exports.create = function(req, res, next) {
   var user = new User(req.body);
   user.save(function(err) {
     if (err) {
@@ -140,14 +155,12 @@ exports.list = function(req, res, next) {
   });
 };
 
-exports.read = function(req, res) {
-  res.json(req.user);
-};
-
+// Fetch user document and attach to req.user
+// Middleware for app.param
 exports.userByID = function(req, res, next, id) {
   User.findOne({
       _id: id
-    }, 
+    },
     function(err, user) {
       if (err) {
         return next(err);
@@ -158,6 +171,10 @@ exports.userByID = function(req, res, next, id) {
       }
     }
   );
+};
+
+exports.read = function(req, res) {
+  res.json(req.user);
 };
 
 exports.update = function(req, res, next) {
@@ -179,5 +196,5 @@ exports.delete = function(req, res, next) {
     else {
       res.json(req.user);
     }
-  })
+  });
 };
