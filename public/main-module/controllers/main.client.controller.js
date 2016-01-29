@@ -1,4 +1,5 @@
-angular.module('main').controller('mainController', ['Authentication', function(Authentication) {
+angular.module('main').controller('MainController', ['Authentication',
+  function(Authentication) {
     var vm = this;
 
     vm.authentication = Authentication;

@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><%= title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDo App</title>
+    
+    <!-- Bootstrap Files -->
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.css">
 </head>
 
 <body>
-  <section ng-view></section>
+  <section ng-view class="main-section"></section>
   
   <script type="text/javascript">
     window.user = <%- user || 'null' %>;
+    console.log(user);
   </script>
-
-    <h1><%= title %></h1>
-
-    <% if ( user ) { %>
-    <h2>Hello <%= user %> </h2>
-    <a href="/logout">Logout</a>
-  <% } else { %>
-    <a href="/signup">Sign Up</a>
-    <a href="/login">Login</a>
-  <% } %>
-
-  <script type="text/javascript" src="/js/vendor/angular/angular.js"></script>
-  <script type="text/javascript" src="/js/vendor/angular-route/angular-route.min.js"></script>
-
-  <script type="text/javascript" src="/main-module/main.client.module.js"></script>
-  <script type="text/javascript" src="/main-module/config/main.client.routes.js"></script>
-
+  
+  <!-- Bootstrap Files -->
+  <script type="text/javascript" src="/vendors/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+  <!-- Angular Files -->
+  <script type="text/javascript" src="/vendors/angular/angular.js"></script>
+  <script type="text/javascript" src="/vendors/angular-route/angular-route.min.js"></script>
+  <script type="text/javascript" src="/vendors/angular-resource/angular-resource.min.js"></script>
+  
+  <!-- Angular App Files-->
+  
+  <!-- Users Module -->
   <script type="text/javascript" src="/users-module/users.client.module.js"></script>
   <script type="text/javascript" src="/users-module/services/authentication.client.service.js"></script>
+  
+  <!-- Todo Module -->
+  <script type="text/javascript" src="/todos-module/todos.client.module.js"></script>
+  <script type="text/javascript" src="/todos-module/controllers/todos.client.controller.js"></script>
+  <script type="text/javascript" src="/todos-module/services/todos.client.service.js"></script>
+  <script type="text/javascript" src="/todos-module/config/todos.client.routes.js"></script>
+
+  <!-- Main Module -->
+  <script type="text/javascript" src="/main-module/main.client.module.js"></script>
+  <script type="text/javascript" src="/main-module/controllers/main.client.controller.js"></script>
+  <script type="text/javascript" src="/main-module/config/main.client.routes.js"></script>
+
+  <!-- Main Angular App -->
+  <script type="text/javascript" src="/application.js"></script>
 </body>
 </html>

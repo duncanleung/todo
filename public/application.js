@@ -1,13 +1,15 @@
-var app = angular.module('todo', ['ngRoute', 'main', 'users']);
+angular.module('todoApp', ['ngRoute', 'ngResource', 'main', 'users', 'todos'])
 
-app.config(['$locationProvider', function($locationProvider) {
-  $locationProvider.hashPrefix('!');
-}]);
+    .config(['$locationProvider', function($locationProvider) {
+      $locationProvider.hashPrefix('!');
+      }
+    ]);
 
+// Facebook OAuth URL Fix
 if(window.location.hash === '#_=_') {
   window.location.hash = '#!';
 }
 
 angular.element(document).ready(function() {
-  angular.bootstrap(document, ['todo']);
+  angular.bootstrap(document, ['todoApp']);
 });
