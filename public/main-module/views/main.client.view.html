@@ -1,5 +1,5 @@
 <div ng-controller="MainController as Main">
-    <nav class="navbar navbar-default navbar-fixed-top">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <!-- Brand and toggle grouped for better mobile display -->
       <div class="navbar-header page-scroll">
@@ -19,10 +19,10 @@
             <a href="#page-top"></a>
           </li>
           <li class="page-scroll" ng-show="!Main.authentication.user">
-            <a href="/login">Login</a>
+            <a href="/login">Sign In</a>
           </li>
           <li class="page-scroll" ng-show="!Main.authentication.user">
-            <a href="/signup">Sign Up</a>
+            <a href="/signup">Create a Free Account</a>
           </li>
           <li class="page-scroll" ng-show="Main.authentication.user">
             <a href="/#!/todos">TODOS</a>
@@ -39,19 +39,26 @@
     <header data-ng-show="!Main.authentication.user">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-sm-6">
                     <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
                     <div class="intro-text">
-                        <span class="name">TODO App</span>
-                        <hr class="star-light">
-                        <span class="skills">Mongo Express Node Angular powered TODO list</span>
+                        <span class="name">Keep your life in order</span>
+                        <hr class="line-light">
+                        <p class="skills">Mongo Express Node Angular powered TODO list.</p>
+                        <p class="skills description">TodoIt is the easiest way to get stuff done. Whether you’re planning a holiday, sharing a shopping list with a partner or managing multiple work projects, TodoIt is here to help you tick off all your personal and professional to-dos.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
+                    <div class="intro-img">
+                        
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="success" id="about" ng-show="Main.authentication.user">
+    <section id="about" ng-show="Main.authentication.user">
         <div class="container">
         <ul>
         <h3>
@@ -71,19 +78,19 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>About TodoApp</h2>
-                    <hr class="star-primary">
+                    <hr class="line-primary">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="success" id="about" ng-show="!Main.authentication.user">
+    <section id="about" ng-show="!Main.authentication.user">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2>What it is?</h2>
-                    <hr class="star-light">
+                    <hr class="line-light">
                 </div>
             </div>
             <div class="row">

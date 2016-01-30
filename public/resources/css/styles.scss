@@ -1,0 +1,113 @@
+
+// Colors
+// ==================================
+
+$primary-orange: #dd4c39;
+$primary-blue: #247bc6;
+$primary-green: #65b01b;
+$background-white: #fafafa;
+$background-gradient: linear-gradient(rgb(250, 250, 250), rgb(243, 243, 243));
+
+// Base Styles
+// ==================================
+
+body {
+    overflow-x: hidden;
+    font-family:'Roboto', sans-serif;
+}
+
+p {
+    font-size: 20px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: 0;
+    color: #18bc9c;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    
+    font-weight: 700;
+}
+
+// Navbar Styles
+// ==================================
+.navbar {
+    background-color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+
+  
+  .navbar-nav {
+    letter-spacing: 1px;
+
+  }
+}
+
+// Main Header Styles
+// ==================================
+
+hr.line-light,
+hr.line-primary {
+    margin: 25px auto 30px;
+    padding: 0;
+    max-width: 250px;
+    border-top: solid 5px;
+    text-align: center;
+}
+
+hr.line-light {
+    border-color: #fff;
+}
+
+hr.line-primary {
+    border-color: #2c3e50;
+}
+
+header {
+    text-align: center;
+    color: black;
+    background-image: url('/resources/img/todolist-header.jpg');
+    background-size: cover;
+  
+  .container {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  
+  .intro-text {
+    .name {
+      display: block;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      font-size: 50px;
+      font-weight: 100;
+    }
+
+    .skills {
+      text-align: left;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 300;
+    }
+
+    .description {
+      font-size: 18px;
+      font-weight: 100;
+    }
+  }
+}
+
+
+// Main Section Styles
+// ==================================
