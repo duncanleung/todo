@@ -1,0 +1,62 @@
+<div ng-controller="TodosController as Todos">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#page-top" class="navbar-brand">ToDo</a>
+      </div>
+  
+      <!-- Collect nav links, forms, etc for toggling -->
+      <div id="bs-example-navbar-collapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li class="page-scroll" ng-show="!Todos.authentication.user">
+            <a href="/login">Login</a>
+          </li>
+          <li class="page-scroll" ng-show="!Todos.authentication.user">
+            <a href="/register">Register</a>
+          </li>
+          <li class="page-scroll" ng-show="Todos.authentication.user">
+            <a href="/#!/todos">TODOS</a>
+          </li>
+          <li class="page-scroll" ng-show="Todos.authentication.user">
+            <a href="/logout">Hello <span ng-bind="Todos.authentication.user.name" ng-show="Todos.authentication.user"></span>, Logout?</a>
+          </li>
+        </ul>
+      </div> <!-- Navbar Collapse -->
+
+    </div> <!-- Container -->
+  </nav>
+
+  <section class="container">
+    <h1>New Todo</h1>
+    <form class="form-signin" ng-submit="Todos.create()" novalidate>
+      <div>
+        <label for="title" class="sr-only">Title</label>
+        <div>
+          <input type="text" ng-model="Todos.title" id="title" Placeholder="Todos" required autofocus class="form-control">
+        </div>
+      </div>
+      <div>
+        <label for="comment" class="sr-only">Comment</label>
+        <div>
+          <textarea ng-model="Todos.comment" id="comment" cols="30" rows="10" Placeholder="Todos comments" class="form-control"></textarea>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-lg btn-primary btn-block">Create Todo</button>
+      </div>
+      <div ng-show="Todos.error">
+        <strong ng-bind="Todos.error"></strong>
+      </div>
+    </form>
+  </section>
+</div>
