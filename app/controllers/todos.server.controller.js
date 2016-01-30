@@ -51,3 +51,24 @@ exports.list = function(req, res) {
     }
   });
 };
+
+// Output Todo from req.todo that was attached by todoById
+exports.read = function(req, res) {
+  res.json(req.todo);
+};
+
+// Fetch Todo document and attach to req.todo
+// Middleware for app.param
+exports.todoById = function(req, res, next, id) {
+  Todo.findById(id).populate('creator', 'name username').exec(function(err, todo) {
+    if(err) {
+      return next(err);
+    }
+    if(!todo) {
+      return next(new Error('Failed to load todo ' + id));
+    }
+
+    req.todo = todo;
+    next();
+  });
+};
