@@ -84,3 +84,7 @@ header .intro-text .description {
   font-size: 18px;
   font-weight: 100;
 }
+
+section {
+  margin-top: 50px;
+}
