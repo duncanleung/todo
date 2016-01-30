@@ -17,6 +17,16 @@ var getErrorMessage = function(err) {
   }
 };
 
+// Middleware to check that current user (req.user) is the creator of current todo (req.todo)
+exports.hasAuthorization = function(req, res, next) {
+  if(req.todo.creator.id !== req.user.id) {
+    return res.status(403).send({
+      message: 'User is not authorized'
+    });
+  }
+  next();
+};
+
 // Create New Todo from req.body
 exports.create = function(req, res) {
   var todo = new Todo(req.body);
@@ -70,5 +80,41 @@ exports.todoById = function(req, res, next, id) {
 
     req.todo = todo;
     next();
+  });
+};
+
+// Update Todo Previously Fetched by todoById
+exports.update = function(req, res) {
+  var todo = req.todo;
+
+  todo.title = req.body.title;
+  todo.comment = req.body.comment;
+  todo.completed = req.body.completed;
+
+  todo.save(function(err) {
+    if(err) {
+      return res.status(400).send({
+        message: getErrorMessage(err)
+      });
+    }
+    else {
+      res.json(todo);
+    }
+  });
+};
+
+// Delete Todo Previously Fetched by todoById
+exports.delete = function(req, res) {
+  var todo = req.todo;
+
+  todo.remove(function(err) {
+    if(err) {
+      return res.status(400).send({
+        message: getErrorMessage(err)
+      });
+    }
+    else {
+      res.json(todo);
+    }
   });
 };

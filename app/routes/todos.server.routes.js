@@ -9,7 +9,9 @@ module.exports = function(app) {
     .post(users.requiresLogin, todos.create);
 
   app.route('/api/todos/:todoId')
-    .get(todos.read);
+    .get(todos.read)
+    .put(users.requiresLogin, todos.hasAuthorization, todos.update)
+    .delete(users.requiresLogin, todos.hasAuthorization, todos.delete);
 
   // Every route that has todoId param will call middleware
   app.param('todoId', todos.todoById);
