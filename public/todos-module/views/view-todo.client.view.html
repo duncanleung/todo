@@ -1,0 +1,50 @@
+<div ng-controller="TodosController as Todos">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="#page-top" class="navbar-brand">ToDo</a>
+      </div>
+
+      <!-- Collect nav links, forms, etc for toggling -->
+      <div id="bs-example-navbar-collapse" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="hidden">
+            <a href="#page-top"></a>
+          </li>
+          <li class="page-scroll" ng-show="!Todos.authentication.user">
+            <a href="/login">Login</a>
+          </li>
+          <li class="page-scroll" ng-show="!Todos.authentication.user">
+            <a href="/register">Register</a>
+          </li>
+          <li class="page-scroll" ng-show="Todos.authentication.user">
+            <a href="/#!/todos">TODOS</a>
+          </li>
+          <li class="page-scroll" ng-show="Todos.authentication.user">
+            <a href="/logout">Hello <span ng-bind="Todos.authentication.user.name" ng-show="Todos.authentication.user"></span>, Logout?</a>
+          </li>
+        </ul>
+      </div> <!-- Navbar Collapse -->
+    </div> <!-- Container -->
+  </nav>
+
+  <section ng-init="Todos.findOne()" class="container">
+    <h1 ng-bind="Todos.todo.title" ng-class="Todos.todo.completed ? 'completed' : '' ">
+    </h1>
+    <div ng-show="Todos.authentication.user._id == Todos.todo.creator._id">
+      <a href="/#!/todos/{{Todos.todo._id}}/edit">edit</a>
+      <a href="#" ng-click="Todos.delete()">delete</a>
+    </div>
+    <small>
+      <em ng-bind="Todos.todo.created | date:'mediumDate'"></em>
+    </small>
+    <p ng-bind="Todos.todo.comment"></p>
+  </section>
+</div>
