@@ -1,5 +1,5 @@
-angular.module('todos').controller('TodosController', ['$location', 'Authentication', 'Todos',
-  function($location, Authentication, Todos) {
+angular.module('todos').controller('TodosController', ['$routeParams', '$location', 'Authentication', 'Todos',
+  function($routeParams, $location, Authentication, Todos) {
 
     var vm = this;
 
@@ -17,6 +17,11 @@ angular.module('todos').controller('TodosController', ['$location', 'Authenticat
       }, function(errorResponse) {
         vm.error = errorResponse.data.message;
       });
+    };
+
+    vm.find = function() {
+      vm.todos = Todos.query();
+      console.log(vm.todos);
     };
   }
 ]);
