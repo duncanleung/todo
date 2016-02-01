@@ -40,7 +40,7 @@
       <h1>Todos</h1>
         <ul>
           <li ng-repeat="todo in Todos.todos" ng-show="!todo.completed">
-            <input type="checkbox" ng-model="todo.completed">
+            <input type="checkbox" ng-change="todo.$update()" ng-model="todo.completed">
             <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
             (<small ng-bind="todo.created | date:'short'"></small>)
             <br>

@@ -98,6 +98,7 @@ exports.update = function(req, res) {
       });
     }
     else {
+      console.log(todo);
       res.json(todo);
     }
   });
