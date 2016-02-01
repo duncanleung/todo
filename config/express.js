@@ -30,11 +30,18 @@ module.exports = function() {
   app.use(passport.session());
 
   // Routes
+  app.use(express.static('./public'));
+
   require('../app/routes/index.server.routes.js')(app);
   require('../app/routes/users.server.routes.js')(app);
   require('../app/routes/todos.server.routes.js')(app);
 
-  app.use(express.static('./public'));
+  app.use('/*', function(req, res) {
+    res.render('index', {
+      title: 'ToDo App',
+      user: JSON.stringify(req.user)
+    });
+  });
 
   return app;
 };
