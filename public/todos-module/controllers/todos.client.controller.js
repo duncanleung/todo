@@ -1,5 +1,5 @@
-angular.module('todos').controller('TodosController', ['$routeParams', '$location', 'Authentication', 'Todos',
-  function($routeParams, $location, Authentication, Todos) {
+angular.module('todos').controller('TodosController', ['$scope', '$routeParams', '$location', '$filter', 'Authentication', 'Todos',
+  function($scope, $routeParams, $location, $filter, Authentication, Todos) {
 
     var vm = this;
 
@@ -60,5 +60,13 @@ angular.module('todos').controller('TodosController', ['$routeParams', '$locatio
         });
       }
     };
+
+    // Watch Equality by Value (Third Param to True)
+    $scope.$watch(function() {
+      return vm.todos;
+    }, function() {
+      console.log('watch');
+      vm.remainingCount = $filter('filter')(vm.todos, { completed: false }).length;
+    }, true);
   }
 ]);

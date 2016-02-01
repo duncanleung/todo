@@ -79,4 +79,14 @@
         </ul>
     </div>
   </section>
+  
+  <!-- Count of Remaining Todos -->
+  <section ng-show="Todos.todos.length">
+    <div class="container">
+      <span id="todos-count">
+        <strong>{{ Todos.remainingCount }}</strong>
+        <div ng-pluralize count="Todos.remainingCount" when="{ one: 'item left', other: 'items left' }"></div>
+      </span>
+    </div>
+  </section>
 </div>
