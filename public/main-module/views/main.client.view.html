@@ -19,16 +19,16 @@
             <a href="#page-top"></a>
           </li>
           <li class="page-scroll" ng-show="!Main.authentication.user">
-            <a href="/login">Sign In</a>
+            <a href="/login" target="_self">Sign In</a>
           </li>
           <li class="page-scroll" ng-show="!Main.authentication.user">
-            <a href="/signup">Create a Free Account</a>
+            <a href="/signup" target="_self">Create a Free Account</a>
           </li>
           <li class="page-scroll" ng-show="Main.authentication.user">
-            <a href="/#!/todos">TODOS</a>
+            <a href="/todos">TODOS</a>
           </li>
           <li class="page-scroll" ng-show="Main.authentication.user">
-            <a href="/logout">Hello <span ng-bind="Main.authentication.user.name" ng-show="Main.authentication.user"></span>, Logout?</a>
+            <a href="/logout" target="_self">Hello <span ng-bind="Main.authentication.user.name" ng-show="Main.authentication.user"></span>, Logout?</a>
           </li>
         </ul>
       </div> <!-- Navbar Collapse -->
@@ -47,7 +47,7 @@
                 <p class="skills">Mongo Express Node Angular powered TODO list.</p>
                 <p class="skills description">TodoIt is the easiest way to get stuff done. Whether you’re planning a holiday, sharing a shopping list with a partner or managing multiple work projects, TodoIt is here to help you tick off all your personal and professional to-dos.</p>
                 <div class="cta">
-                  <a class="button" href="/signup">Create a Free Account</a>
+                  <a class="button" href="/signup" target="_self">Create a Free Account</a>
                 </div>
               </div>
             </div>
@@ -59,11 +59,11 @@
         <div class="container">
         <ul>
         <h3>
-          <li><a href="/#!/todos">List Todos</a></li>
+          <li><a href="/todos">List Todos</a></li>
         </h3>
         
         <h3>
-          <li><a href="/#!/todos/create">Create Todo</a></li>
+          <li><a href="/todos/create">Create Todo</a></li>
         </h3>
       </ul>        
         </div>

@@ -19,16 +19,16 @@
             <a href="#page-top"></a>
           </li>
           <li class="page-scroll" ng-show="!Todos.authentication.user">
-            <a href="/login">Login</a>
+            <a href="/login" target="_self">Login</a>
           </li>
           <li class="page-scroll" ng-show="!Todos.authentication.user">
-            <a href="/register">Register</a>
+            <a href="/register" target="_self">Register</a>
           </li>
           <li class="page-scroll" ng-show="Todos.authentication.user">
-            <a href="/#!/todos">TODOS</a>
+            <a href="/todos">TODOS</a>
           </li>
           <li class="page-scroll" ng-show="Todos.authentication.user">
-            <a href="/logout">Hello <span ng-bind="Todos.authentication.user.name" ng-show="Todos.authentication.user"></span>, Logout?</a>
+            <a href="/logout" target="_self">Hello <span ng-bind="Todos.authentication.user.name" ng-show="Todos.authentication.user"></span>, Logout?</a>
           </li>
         </ul>
       </div> <!-- Navbar Collapse -->
@@ -41,7 +41,7 @@
         <ul>
           <li ng-repeat="todo in Todos.todos" ng-show="!todo.completed">
             <input type="checkbox" ng-model="todo.completed">
-            <a href="#!/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
+            <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
             (<small ng-bind="todo.created | date:'short'"></small>)
             <br>
 
@@ -53,7 +53,7 @@
         <ul>
           <li ng-repeat="todo in Todos.todos" ng-show="Todos.showcompleted && todo.completed">
             <input type="checkbox" ng-model="todo.completed">
-            <a href="#!/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
+            <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
             (<small ng-bind="todo.created | date:'short'"></small>)
             <br>
 
@@ -62,7 +62,7 @@
         </ul>
         <!-- CHECK THIS COND. STATEMENT -->
         <div ng-show="Todos.todos.length == 0">
-          No todos yet. <a href="/#!/todos/create">Create a new todo</a>
+          No todos yet. <a href="/todos/create">Create a new todo</a>
         </div>
     </div>
   </section>

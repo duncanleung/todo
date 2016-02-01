@@ -19,16 +19,16 @@
             <a href="#page-top"></a>
           </li>
           <li class="page-scroll" ng-show="!Todos.authentication.user">
-            <a href="/login">Login</a>
+            <a href="/login" target="_self">Login</a>
           </li>
           <li class="page-scroll" ng-show="!Todos.authentication.user">
             <a href="/register">Register</a>
           </li>
           <li class="page-scroll" ng-show="Todos.authentication.user">
-            <a href="/#!/todos">TODOS</a>
+            <a href="/todos">TODOS</a>
           </li>
           <li class="page-scroll" ng-show="Todos.authentication.user">
-            <a href="/logout">Hello <span ng-bind="Todos.authentication.user.name" ng-show="Todos.authentication.user"></span>, Logout?</a>
+            <a href="/logout" target="_self">Hello <span ng-bind="Todos.authentication.user.name" ng-show="Todos.authentication.user"></span>, Logout?</a>
           </li>
         </ul>
       </div> <!-- Navbar Collapse -->

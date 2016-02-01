@@ -1,7 +1,7 @@
 angular.module('todoApp', ['ngRoute', 'ngResource', 'main', 'users', 'todos'])
 
     .config(['$locationProvider', function($locationProvider) {
-      $locationProvider.hashPrefix('!');
+      $locationProvider.html5Mode(true);
       }
     ]);
 
