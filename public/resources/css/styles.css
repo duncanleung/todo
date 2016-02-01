@@ -7,15 +7,6 @@ p {
   font-size: 20px;
 }
 
-a,
-a:hover,
-a:focus,
-a:active,
-a.active {
-  outline: 0;
-  color: #18bc9c;
-}
-
 h1,
 h2,
 h3,
@@ -83,6 +74,28 @@ header .intro-text .skills {
 header .intro-text .description {
   font-size: 18px;
   font-weight: 100;
+}
+
+header .intro-text .cta {
+  text-align: left;
+  margin-top: 50px;
+}
+
+header .intro-text .cta .button {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: #dd4c39;
+  font-weight: 500;
+  font-size: 16px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+header .intro-text .cta .button:hover {
+  text-decoration: none;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+  color: #c23421;
 }
 
 section {

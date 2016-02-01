@@ -20,15 +20,6 @@ p {
     font-size: 20px;
 }
 
-a,
-a:hover,
-a:focus,
-a:active,
-a.active {
-    outline: 0;
-    color: #18bc9c;
-}
-
 h1,
 h2,
 h3,
@@ -104,6 +95,26 @@ header {
     .description {
       font-size: 18px;
       font-weight: 100;
+    }
+    
+    .cta {
+      text-align: left;
+      margin-top: 50px;
+      .button {
+        background-color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: $primary-orange;
+        font-weight: 500;
+        font-size: 16px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          text-decoration: none;
+          box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.4);
+          color: darken($primary-orange, 10%);
+        }
+      }
     }
   }
 }
