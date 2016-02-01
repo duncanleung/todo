@@ -47,7 +47,7 @@ exports.renderLogin = function(req, res, next) {
     });
   }
   else {
-    return res.redirect('/');
+    return res.redirect('/todos');
   }
 };
 
@@ -61,7 +61,7 @@ exports.renderSignup = function(req, res, next) {
     });
   }
   else {
-    return res.redirect('/');
+    return res.redirect('/todos');
   }
 };
 
@@ -78,16 +78,18 @@ exports.signup = function(req, res, next) {
         return res.redirect('/signup');
       }
 
+      // Passport Login
       req.login(user, function(err) {
-        if (err)
+        if (err) {
           return next(err);
+        }
         
-        return res.redirect('/');
+        return res.redirect('/todos');
       });
     });
   }
   else {
-    return res.redirect('/');
+    return res.redirect('/todos');
   }
 };
 
