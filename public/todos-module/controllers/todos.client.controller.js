@@ -13,7 +13,6 @@ angular.module('todos').controller('TodosController', ['$scope', '$routeParams',
 
       // Send newTodo to server for storage
       newTodo.$save(function(todo) {
-        console.log(todo);
       }, function(errorResponse) {
         vm.error = errorResponse.data.message;
       });
@@ -65,7 +64,6 @@ angular.module('todos').controller('TodosController', ['$scope', '$routeParams',
     $scope.$watch(function() {
       return vm.todos;
     }, function() {
-      console.log('watch');
       vm.remainingCount = $filter('filter')(vm.todos, { completed: false }).length;
     }, true);
   }
