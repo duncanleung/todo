@@ -60,8 +60,11 @@
             <br>
 
             <small ng-bind="todo.comment" class="comment"></small>
+            <a href="#" ng-click="Todos.delete(todo)">delete</a>
           </li>
         </ul>
+
+        <!-- Completed Todo Items -->
         <span>Show completed:</span>
         <input type="checkbox" ng-model="Todos.showcompleted" ng-init="Todos.showcompleted=true">
         <ul>
