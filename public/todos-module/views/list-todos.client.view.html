@@ -10,6 +10,7 @@
           <span class="icon-bar"></span>
         </button>
         <a href="#page-top" class="navbar-brand">ToDo Inbox</a>
+        <input type="text" ng-model="Todos.search" class="search" id="search" placeholder="Search Your Todos">
       </div>
 
       <!-- Collect nav links, forms, etc for toggling -->
@@ -53,7 +54,7 @@
   <section ng-init="Todos.find()">
     <div class="container">
         <ul>
-          <li ng-repeat="todo in Todos.todos" ng-show="!todo.completed">
+          <li ng-repeat="todo in Todos.todos | filter:Todos.search" ng-show="!todo.completed">
             <input type="checkbox" ng-change="todo.$update()" ng-model="todo.completed">
             <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
             (<small ng-bind="todo.created | date:'short'"></small>)
