@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="#page-top" class="navbar-brand">ToDo</a>
+        <a href="#page-top" class="navbar-brand">ToDo Inbox</a>
       </div>
 
       <!-- Collect nav links, forms, etc for toggling -->
@@ -25,16 +25,14 @@
             <a href="/register" target="_self">Register</a>
           </li>
           <li class="page-scroll" ng-show="Todos.authentication.user">
-            <a href="/todos">TODOS</a>
-          </li>
-          <li class="page-scroll" ng-show="Todos.authentication.user">
             <a href="/logout" target="_self">Hello <span ng-bind="Todos.authentication.user.name" ng-show="Todos.authentication.user"></span>, Logout?</a>
           </li>
         </ul>
       </div> <!-- Navbar Collapse -->
     </div> <!-- Container -->
   </nav>
-
+  
+  <!-- Create New todo Item -->
   <section>
     <div class="container">
       <form class="form-signin" ng-submit="Todos.create()" novalidate>
@@ -50,6 +48,8 @@
       </form>
     </div>
   </section>
+
+  <!-- List Todo Items -->
   <section ng-init="Todos.find()">
     <div class="container">
         <ul>
@@ -77,10 +77,6 @@
             <small ng-bind="todo.comment" class="comment"></small>
           </li>
         </ul>
-        <!-- CHECK THIS COND. STATEMENT -->
-        <div ng-show="Todos.todos.length == 0">
-          No todos yet. <a href="/todos/create">Create a new todo</a>
-        </div>
     </div>
   </section>
 </div>
