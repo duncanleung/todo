@@ -6,17 +6,24 @@ angular.module('todos').controller('TodosController', ['$routeParams', '$locatio
     vm.authentication = Authentication;
 
     vm.create = function() {
-      var todo = new Todos({
-        // MIGHT NEED TO SET this TO vm
-        title: vm.title,
+      var newTodo = new Todos({
+        title: vm.newTodo,
         comment: vm.comment
       });
 
-      todo.$save(function(newTodo) {
-        $location.path('todos/' + newTodo._id);
+      // Send newTodo to server for storage
+      newTodo.$save(function(todo) {
+        console.log(todo);
       }, function(errorResponse) {
         vm.error = errorResponse.data.message;
       });
+
+      // Add newTodo into list of Todos
+      if(newTodo.title) {
+        vm.todos.unshift(newTodo);
+      }
+      // Reset input field
+      vm.newTodo = '';
     };
 
     vm.find = function() {

@@ -12,7 +12,7 @@ var TodoSchema = new Schema({
     type: String,
     default: '',
     trim: true,
-    required: "Title can't be blank"
+    required: "Please enter a To Do item"
   },
   comment: {
     type: String,

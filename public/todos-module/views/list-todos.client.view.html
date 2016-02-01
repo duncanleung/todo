@@ -35,9 +35,23 @@
     </div> <!-- Container -->
   </nav>
 
+  <section>
+    <div class="container">
+      <form class="form-signin" ng-submit="Todos.create()" novalidate>
+        <div>
+          <label for="new-todo" class="sr-only">New Todo</label>
+          <div>
+            <input type="text" ng-model="Todos.newTodo" id="new-todo" Placeholder="Add a todo..." required autofocus class="form-control">
+          </div>
+        </div>
+        <div ng-show="Todos.error">
+          <strong>{{ Todos.error }}</strong>
+        </div>
+      </form>
+    </div>
+  </section>
   <section ng-init="Todos.find()">
     <div class="container">
-      <h1>Todos</h1>
         <ul>
           <li ng-repeat="todo in Todos.todos" ng-show="!todo.completed">
             <input type="checkbox" ng-change="todo.$update()" ng-model="todo.completed">
