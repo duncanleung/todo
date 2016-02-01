@@ -12,8 +12,8 @@ angular.module('todos').controller('TodosController', ['$routeParams', '$locatio
         comment: vm.comment
       });
 
-      todo.$save(function(response) {
-        $location.path('todos/' + response._id);
+      todo.$save(function(newTodo) {
+        $location.path('todos/' + newTodo._id);
       }, function(errorResponse) {
         vm.error = errorResponse.data.message;
       });
@@ -21,7 +21,6 @@ angular.module('todos').controller('TodosController', ['$routeParams', '$locatio
 
     vm.find = function() {
       vm.todos = Todos.query();
-      console.log(vm.todos);
     };
 
     vm.findOne = function() {
