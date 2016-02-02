@@ -195,3 +195,98 @@ section:first-child {
   }
 }
 
+// Signup Page Styles
+// ==================================
+.signup {
+  background-color: #fafafa;
+
+  .todo-logo {
+    margin: 50px auto 0;
+    display: block;
+    width: 70px;
+  }
+
+  .signup-heading {
+    font-weight: 300;
+    font-size: 40px;
+    color: darken($text-dark-gray, 20%);
+  }
+  
+  .signup-col {
+    margin-top: 40px;
+    border-right: 1px solid #cccccc;
+
+    form {
+      position: relative;
+      margin: 5px 60px;
+
+      input {
+        border-radius: 0px;
+        border: 1px solid #ccc;
+        border-bottom: none;
+        padding: 30px 10px;
+        text-indent: 40px;
+        color: $text-dark-gray;
+
+        &:first-of-type {
+          border-radius: 5px 5px 0 0;
+        }
+
+        &:last-of-type {
+          border-radius: 0 0 5px 5px;
+          border-bottom: 1px solid #ccc;
+          margin-bottom: 10px;
+        }
+      }
+
+      .fa {
+        position: absolute;
+        left: 15px;
+
+        &.fa-user {
+          top: 15px;
+          font-size: 30px;
+          color: #ccc;
+        }
+
+        &.fa-envelope {
+          top: 80px;
+          font-size: 25px;
+          color: #ccc;
+        }
+
+        &.fa-lock {
+          top: 135px;
+          font-size: 35px;
+          color: #ccc;
+        }
+      }
+
+      button {
+          font-weight: 300;
+          background-color: $primary-blue;
+      }
+    }
+
+  }
+
+  .switch {
+    margin-top: 30px;
+    color: $text-dark-gray;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

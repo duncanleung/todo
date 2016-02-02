@@ -165,3 +165,81 @@ section:first-child {
   text-indent: 15px;
   color: #777;
 }
+
+.signup {
+  background-color: #fafafa;
+}
+
+.signup .todo-logo {
+  margin: 50px auto 0;
+  display: block;
+  width: 70px;
+}
+
+.signup .signup-heading {
+  font-weight: 300;
+  font-size: 40px;
+  color: #444444;
+}
+
+.signup .signup-col {
+  margin-top: 40px;
+  border-right: 1px solid #cccccc;
+}
+
+.signup .signup-col form {
+  position: relative;
+  margin: 5px 60px;
+}
+
+.signup .signup-col form input {
+  border-radius: 0px;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  padding: 30px 10px;
+  text-indent: 40px;
+  color: #777;
+}
+
+.signup .signup-col form input:first-of-type {
+  border-radius: 5px 5px 0 0;
+}
+
+.signup .signup-col form input:last-of-type {
+  border-radius: 0 0 5px 5px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.signup .signup-col form .fa {
+  position: absolute;
+  left: 15px;
+}
+
+.signup .signup-col form .fa.fa-user {
+  top: 15px;
+  font-size: 30px;
+  color: #ccc;
+}
+
+.signup .signup-col form .fa.fa-envelope {
+  top: 80px;
+  font-size: 25px;
+  color: #ccc;
+}
+
+.signup .signup-col form .fa.fa-lock {
+  top: 135px;
+  font-size: 35px;
+  color: #ccc;
+}
+
+.signup .signup-col form button {
+  font-weight: 300;
+  background-color: #247bc6;
+}
+
+.signup .switch {
+  margin-top: 30px;
+  color: #777;
+}

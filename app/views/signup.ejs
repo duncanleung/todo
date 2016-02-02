@@ -4,39 +4,56 @@
   <title>
     <%=title %>
   </title>
-
-  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.css">
+    <!-- Bootstrap Files -->
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.css">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/resources/css/styles.css">
 </head>
-<body>
-  <% for(var i in messages) { %>
-  <div class="flash"><%= messages[i] %></div>
-  <% } %>
-
+<body class="signup">
   <div class="container">
-    <form class="form-signin" action="/signup" method="post">
-          <h2 class="form-signin-heading text-center">Sign Up</h2>
-        
+    <img class="todo-logo" src="resources/img/todo-100.png" alt="todo-logo">
+    <h2 class="signup-heading text-center">Get ToDo for Free</h2>
+    
+    <div class="row">
+      <div class="col-sm-6 signup-col">
+        <form class="form-signup" action="/signup" method="post" novalidate>
           <label for="username" class="sr-only">Username</label>
+          <span class="fa fa-user"></span>
           <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
 
-          <label for="name" class="sr-only">Name</label>
-          <input type="text" id="name" name="name" class="form-control" placeholder="Name" required autofocus>
-
           <label for="email" class="sr-only">E-mail</label>
+          <span class="fa fa-envelope"></span>
           <input type="email" id="email" name="email" class="form-control" placeholder="E-mail" required>
           
           <label for="password" class="sr-only">Password</label>
+          <span class="fa fa-lock"></span>
           <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
           
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Create Free Account</button>
         </form>
 
+        <% for(var i in messages) { %>
+        <div class="flash"><%= messages[i] %></div>
+        <% } %>
+
         <div class="row">
-        <div class="center-block text-center">
-        <a href="/oauth/facebook">Login with Facebook</a>
-      </div>
+          <div class="text-center">
+            <a href="/oauth/facebook">Login with Facebook</a>
+          </div>
+          <div class="switch text-center">
+            Already have an account? <a href="/login">Sign In</a>
+          </div>
+        </div>
+
+      </div> <!-- Col -->
+      <div class="col-sm-6">
+        
+      </div> <!-- Col -->
     </div>
-    </div>
+  </div> <!-- Container -->
 </body>
 </html>
