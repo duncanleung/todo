@@ -60,6 +60,13 @@ angular.module('todos').controller('TodosController', ['$scope', '$routeParams',
       }
     };
 
+    vm.checkAll = function(toggleAll) {
+      angular.forEach(vm.todos, function(todo) {
+        todo.completed = toggleAll;
+        todo.$update();
+      });
+    };
+
     vm.clearCompleted = function() {
       var uncompletedTodos = [];
       angular.forEach(vm.todos, function(todo) {

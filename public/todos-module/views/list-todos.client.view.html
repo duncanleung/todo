@@ -53,6 +53,8 @@
   <!-- List Todo Items -->
   <section ng-init="Todos.find()">
     <div class="container">
+      <input id="complete-all" type="checkbox" ng-model="toggleAll" ng-click="Todos.checkAll(toggleAll)">
+      <label for="complete-all">Mark All Todos as Complete</label>
       <ul>
         <li ng-repeat="todo in Todos.todos | filter:Todos.search" ng-show="!todo.completed">
           <input type="checkbox" ng-change="todo.$update()" ng-model="todo.completed">
