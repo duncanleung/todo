@@ -321,6 +321,12 @@ header {
       padding: 30px 10px;
       text-indent: 40px;
       color: $text-dark-gray;
+      box-shadow: none;
+
+      &:focus {
+        box-shadow: none;
+        border-color: #ccc;
+      }
 
       &:first-of-type {
         border-radius: 5px 5px 0 0;
