@@ -5,35 +5,49 @@
     <%=title %>
   </title>
 
-  <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+  <!-- Font Awesome -->
+    <link rel="stylesheet" href="/vendors/font-awesome/css/font-awesome.css">
+    <!-- Bootstrap Files -->
+    <link rel="stylesheet" href="/vendors/bootstrap/dist/css/bootstrap.css">
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="/resources/css/styles.css">
 </head>
-<body>
-  <% for(var i in messages) { %>
-    <div class="flash">
-      <%= messages[i] %>
-    </div>
-  <% } %>
-
+<body class="login">
   <div class="container">
-    <form class="form-signin" action="/login" method="post">
-          <h2 class="form-signin-heading text-center">Login</h2>
-        
+    <div class="row">
+      <div class="login-col">
+        <img class="todo-logo" src="resources/img/todo-100.png" alt="todo-logo">
+        <form class="form-signin" action="/login" method="post">
           <label for="username" class="sr-only">Username</label>
+          <span class="fa fa-user"></span>
           <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
           
           <label for="password" class="sr-only">Password</label>
+          <span class="fa fa-lock"></span>
           <input type="password" name="password" id="password" class="form-control" placeholder="Password">
           
           <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
         </form>
 
+        <% for(var i in messages) { %>
+          <div class="flash">
+            <%= messages[i] %>
+          </div>
+        <% } %>
+
         <div class="row">
-        <div class="center-block text-center">
-        <a href="/oauth/facebook">Login with Facebook</a>
+          <div class="text-center">
+            <a href="/oauth/facebook">Login with Facebook</a>
+          </div>
+          <div class="switch text-center">
+            Don't have an account? <a href="/signup">Create a Free Account</a>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
+  </div> <!-- Container -->
 </div>
 </body>
 </html>
