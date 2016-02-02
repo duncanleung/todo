@@ -10,11 +10,16 @@
           <span class="icon-bar"></span>
         </button>
         <a href="#page-top" class="navbar-brand">ToDo Inbox</a>
-        <input type="text" ng-model="Todos.search.title" class="search" id="search" placeholder="Search Your Todos">
       </div>
 
       <!-- Collect nav links, forms, etc for toggling -->
       <div id="bs-example-navbar-collapse" class="collapse navbar-collapse">
+        <div class="navbar-form navbar-left search">
+          <span class="fa fa-search"></span>
+          <input type="text" ng-model="Todos.search.title" class="form-control" id="search" placeholder="Search Your Todos">
+          <span ng-click="Todos.clearSearch()" ng-show="Todos.search" class="fa fa-close"></span>
+        </div>
+
         <ul class="nav navbar-nav navbar-right">
           <li class="hidden">
             <a href="#page-top"></a>

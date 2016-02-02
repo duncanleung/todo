@@ -19,6 +19,7 @@
     "angular": "~1.4.9",
     "angular-route": "~1.4.9",
     "angular-resource": "^1.4.9",
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "font-awesome": "fontawesome#^4.5.0"
   }
 }
