@@ -1,4 +1,4 @@
-<div ng-controller="TodosController as Todos">
+<div class="background" ng-controller="TodosController as Todos">
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <!-- Brand and toggle grouped for better mobile display -->
@@ -41,12 +41,11 @@
   <!-- Create New todo Item -->
   <section>
     <div class="container">
-      <form class="form-signin" ng-submit="Todos.create()" novalidate>
-        <div>
+      <form ng-submit="Todos.create()" novalidate>
+        <div class="new-todo">
           <label for="new-todo" class="sr-only">New Todo</label>
-          <div>
-            <input type="text" ng-model="Todos.newTodo" id="new-todo" Placeholder="Add a todo..." required autofocus class="form-control">
-          </div>
+          <span class="plus">+</span>
+          <input type="text" ng-model="Todos.newTodo" id="new-todo" Placeholder="Add a todo..." required autofocus class="form-control">
         </div>
         <div ng-show="Todos.error">
           <strong>{{ Todos.error }}</strong>
@@ -73,7 +72,7 @@
       </ul>
 
       <!-- Completed Todo Items -->
-      <ul>
+      <ul class="completed-list">
         <li ng-repeat="todo in Todos.todos" ng-show="Todos.showcompleted && todo.completed">
           <input type="checkbox" ng-change="todo.$update()" ng-model="todo.completed">
           <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>

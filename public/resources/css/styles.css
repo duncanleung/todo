@@ -142,30 +142,6 @@ header .intro-text .cta .button:hover {
   color: #c23421;
 }
 
-section:first-child {
-  margin-top: 50px;
-}
-
-.new-todo {
-  position: relative;
-}
-
-.new-todo .plus {
-  position: absolute;
-  left: 8px;
-  top: -1px;
-  color: #777;
-  font-size: 25px;
-  font-weight: 100;
-}
-
-.new-todo #new-todo {
-  margin-top: 20px;
-  padding: 13px 12px 10px;
-  text-indent: 15px;
-  color: #777;
-}
-
 .todo-logo {
   margin: 50px auto 0;
   display: block;
@@ -320,4 +296,84 @@ section:first-child {
 .login form button {
   font-weight: 300;
   background-color: #247bc6;
+}
+
+section:first-child {
+  margin-top: 50px;
+}
+
+.background {
+  background-image: url("/resources/img/background.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.new-todo {
+  position: relative;
+}
+
+.new-todo .plus {
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  color: #ccc;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.new-todo #new-todo {
+  margin-top: 20px;
+  height: 45px;
+  padding: 13px 12px 10px;
+  text-indent: 15px;
+  color: #EDEDED;
+  font-weight: 300;
+  border-style: none;
+  background-color: #7a9675;
+  box-shadow: none;
+  letter-spacing: .5px;
+}
+
+.new-todo #new-todo::-webkit-input-placeholder {
+  /* WebKit, Blink, Edge */
+  color: #ccc;
+}
+
+.new-todo #new-todo:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #ccc;
+  opacity: 1;
+}
+
+.new-todo #new-todo::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #ccc;
+  opacity: 1;
+}
+
+.new-todo #new-todo:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ccc;
+}
+
+.new-todo #new-todo:placeholder-shown {
+  /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: #ccc;
+}
+
+.todo-list,
+.completed-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-list li,
+.completed-list li {
+  padding: 5px 0;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.completed-list .completed {
+  text-decoration: line-through;
 }

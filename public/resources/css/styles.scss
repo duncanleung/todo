@@ -164,37 +164,6 @@ header {
   }
 }
 
-
-// Main Section Styles
-// ==================================
-
-section:first-child {
-  margin-top: 50px;
-}
-
-// Create New Todo Input Styles
-// ==================================
-
-.new-todo {
-  position: relative;
-  
-  .plus {
-    position: absolute;
-    left: 8px;
-    top: -1px;
-    color: $text-dark-gray;
-    font-size: 25px;
-    font-weight: 100;
-  }
-
-  #new-todo {
-    margin-top: 20px;
-    padding: 13px 12px 10px;
-    text-indent: 15px;
-    color: $text-dark-gray;
-  }
-}
-
 // Signup Page Styles
 // ==================================
 .todo-logo {
@@ -296,6 +265,9 @@ section:first-child {
   }
 }
 
+// Login Page Styles
+// ==================================
+
 .login {
   margin-top: 20px;
   background-color: #fafafa;
@@ -352,6 +324,130 @@ section:first-child {
     }
   }
 }
+
+// Main Section Styles
+// ==================================
+
+section:first-child {
+  margin-top: 50px;
+}
+
+// Create New Todo Input Styles
+// ==================================
+.background {
+  background-image: url('/resources/img/background.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+.new-todo {
+  position: relative;
+  
+  .plus {
+    position: absolute;
+    left: 10px;
+    top: 4px;
+    color: #ccc;
+    font-size: 25px;
+    font-weight: 100;
+  }
+
+  #new-todo {
+    margin-top: 20px;
+    height: 45px;
+    padding: 13px 12px 10px;
+    text-indent: 18px;
+    color: #EDEDED;
+    font-weight: 300;
+    border-style: none;
+    background-color: #7a9675;
+    box-shadow: none;
+    letter-spacing: .5px;
+
+    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+      color: #ccc;
+      font-size: 16px;
+    }
+    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: #ccc;
+      opacity:  1;
+      font-size: 16px;
+    }
+    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: #ccc;
+      opacity:  1;
+      font-size: 16px;
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: #ccc;
+      font-size: 16px;
+    }
+    &:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+      color: #ccc;
+      font-size: 16px;
+    }
+  }
+}
+
+.todo-list,
+.completed-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    padding: 5px 0;
+    border-radius: 5px;
+    background-color: white;
+
+    input {
+      
+    }
+
+    li {
+      
+    }
+  }
+}
+
+.completed-list {
+  .completed {
+    text-decoration: line-through;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
