@@ -218,6 +218,7 @@ header .intro-text .cta .button:hover {
   padding: 30px 10px;
   text-indent: 40px;
   color: #777;
+  box-shadow: none;
 }
 
 .signup .signup-col form input:first-of-type {
