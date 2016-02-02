@@ -57,17 +57,21 @@
   <!-- List Todo Items -->
   <section ng-init="Todos.find()">
     <div class="container">
-      <input id="complete-all" type="checkbox" ng-model="toggleAll" ng-click="Todos.checkAll(toggleAll)">
-      <label for="complete-all">Mark All Todos as Complete</label>
-      <ul>
+      <div class="mark-all">
+        <input id="complete-all" type="checkbox" class="css-checkbox" ng-model="toggleAll" ng-click="Todos.checkAll(toggleAll)">
+        <label class="css-label" for="complete-all">Mark All Todos as Complete</label>
+      </div>
+      <!-- Todo List -->
+      <ul class="todo-list">
         <li ng-repeat="todo in Todos.todos | filter:Todos.search" ng-show="!todo.completed">
-          <input type="checkbox" ng-change="todo.$update()" ng-model="todo.completed">
-          <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
-          (<small ng-bind="todo.created | date:'short'"></small>)
-          <br>
-
-          <small ng-bind="todo.comment" class="comment"></small>
-          <a href="#" ng-click="Todos.delete(todo)">delete</a>
+          <div class="todo-content">
+            <input type="checkbox" class="css-checkbox" ng-change="todo.$update()" ng-model="todo.completed" id="{{todo._id}}">
+            <label class="css-label" for="{{todo._id}}"></label>
+            <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
+            (<small ng-bind="todo.created | date:'short'"></small>)
+            <small ng-bind="todo.comment" class="comment"></small>
+            <a href="#" ng-click="Todos.delete(todo)"><span class="fa fa-trash-o"></span></a>
+          </div>
         </li>
       </ul>
 
