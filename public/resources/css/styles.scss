@@ -274,6 +274,26 @@ section:first-child {
     margin-top: 30px;
     color: $text-dark-gray;
   }
+
+  .feature-col {
+    padding: 30px 20px 0 70px;
+
+    .feature {
+      display: inline-block;
+      margin-top: 10px;
+
+      h2 {
+        font-size: 20px;
+        font-weight: 400;
+        color: lighten($primary-blue, 10%);
+      }
+      p {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 25px;
+      }
+    }
+  }
 }
 
 

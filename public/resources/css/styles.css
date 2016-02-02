@@ -243,3 +243,24 @@ section:first-child {
   margin-top: 30px;
   color: #777;
 }
+
+.signup .feature-col {
+  padding: 30px 20px 0 70px;
+}
+
+.signup .feature-col .feature {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.signup .feature-col .feature h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #4194dc;
+}
+
+.signup .feature-col .feature p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+}
