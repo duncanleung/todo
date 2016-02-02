@@ -68,7 +68,6 @@
             <input type="checkbox" class="css-checkbox" ng-change="todo.$update()" ng-model="todo.completed" id="{{todo._id}}">
             <label class="css-label" for="{{todo._id}}"></label>
             <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
-            (<small ng-bind="todo.created | date:'short'"></small>)
             <small ng-bind="todo.comment" class="comment"></small>
             <a href="#" ng-click="Todos.delete(todo)"><span class="fa fa-trash-o"></span></a>
           </div>
@@ -93,7 +92,6 @@
             <input type="checkbox" class="css-checkbox" ng-change="todo.$update()" ng-model="todo.completed" id="{{todo._id}}">
             <label class="css-label" for="{{todo._id}}"></label>
             <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
-            (<small ng-bind="todo.created | date:'short'"></small>)
             <small ng-bind="todo.comment" class="comment"></small>
           </div>
         </li>
