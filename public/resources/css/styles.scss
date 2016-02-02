@@ -461,8 +461,12 @@ section:first-child {
 }
 
 .completed-list {
-  .completed {
-    text-decoration: line-through;
+  li {
+    background-color: rgba(255, 255, 255, .6);
+
+    .completed {
+      text-decoration: line-through;
+    }
   }
 }
 
