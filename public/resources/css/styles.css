@@ -142,6 +142,26 @@ header .intro-text .cta .button:hover {
   color: #c23421;
 }
 
-section {
+section:first-child {
   margin-top: 50px;
+}
+
+.new-todo {
+  position: relative;
+}
+
+.new-todo .plus {
+  position: absolute;
+  left: 8px;
+  top: -1px;
+  color: #777;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+.new-todo #new-todo {
+  margin-top: 20px;
+  padding: 13px 12px 10px;
+  text-indent: 15px;
+  color: #777;
 }

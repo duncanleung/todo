@@ -168,6 +168,30 @@ header {
 // Main Section Styles
 // ==================================
 
-section {
+section:first-child {
   margin-top: 50px;
 }
+
+// Create New Todo Input Styles
+// ==================================
+
+.new-todo {
+  position: relative;
+  
+  .plus {
+    position: absolute;
+    left: 8px;
+    top: -1px;
+    color: $text-dark-gray;
+    font-size: 25px;
+    font-weight: 100;
+  }
+
+  #new-todo {
+    margin-top: 20px;
+    padding: 13px 12px 10px;
+    text-indent: 15px;
+    color: $text-dark-gray;
+  }
+}
+
