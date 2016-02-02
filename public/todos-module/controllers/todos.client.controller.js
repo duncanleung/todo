@@ -78,7 +78,7 @@ angular.module('todos').controller('TodosController', ['$scope', '$routeParams',
       return vm.todos;
     }, function() {
       vm.remainingCount = $filter('filter')(vm.todos, { completed: false }).length;
-      vm.completedCount = vm.todos.length - vm.remainingCount;
+      vm.completedCount = $filter('filter')(vm.todos, { completed: true }).length;
     }, true);
   }
 ]);

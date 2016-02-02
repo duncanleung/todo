@@ -90,11 +90,11 @@
   </section>
   
   <!-- Show Only When There are Completed Todos -->
-  <section ng-cloak ng-if="Todos.completedCount">
+  <section ng-cloak ng-show="Todos.completedCount >= 1">
     <div class="container">
       <span>Show completed:</span>
       <input type="checkbox" ng-model="Todos.showcompleted" ng-init="Todos.showcompleted=true">
-      
+
       <button id="clear-completed" ng-click="Todos.clearCompleted()" ng-show="Todos.completedCount"> Clear Completed Todos ({{ Todos.completedCount }})</button>
     </div>
   </section>
