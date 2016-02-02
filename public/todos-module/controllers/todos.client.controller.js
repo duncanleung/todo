@@ -60,11 +60,25 @@ angular.module('todos').controller('TodosController', ['$scope', '$routeParams',
       }
     };
 
+    vm.clearCompleted = function() {
+      var uncompletedTodos = [];
+      angular.forEach(vm.todos, function(todo) {
+        if(todo.completed) {
+          todo.$remove();
+        } else {
+          uncompletedTodos.push(todo);
+        }
+      });
+
+      vm.todos = uncompletedTodos;
+    };
+
     // Watch Equality by Value (Third Param to True)
     $scope.$watch(function() {
       return vm.todos;
     }, function() {
       vm.remainingCount = $filter('filter')(vm.todos, { completed: false }).length;
+      vm.completedCount = vm.todos.length - vm.remainingCount;
     }, true);
   }
 ]);

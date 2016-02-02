@@ -1,3 +1,7 @@
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none !important;
+}
+
 body {
   overflow-x: hidden;
   font-family: 'Roboto', sans-serif;
