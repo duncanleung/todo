@@ -37,6 +37,13 @@ h6 {
     font-weight: 700;
 }
 
+.btn:focus,
+.btn:active {
+  outline: none !important;
+}
+
+// Custom Checkbox Style Library
+// ==================================
 input[type=checkbox].css-checkbox {
 position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
 }
@@ -67,6 +74,7 @@ label.css-label {
   -ms-user-select: none;
   user-select: none;
 }
+
 
 // Navbar Styles
 // ==================================
@@ -427,6 +435,9 @@ section:first-child {
   }
 }
 
+// Todo Item Styles
+// ==================================
+
 .todo-list,
 .completed-list {
   list-style: none;
@@ -478,8 +489,22 @@ section:first-child {
 }
 
 
+// Todo List Styles
+// ==================================
 
+#show-completed {
+  background-color: rgba(102,137,100,0.75);
+  border: none;
+  color: white;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
 
+  &:hover {
+    background-color: rgba(102,137,100,0.75);
+  }
+}
 
 
 

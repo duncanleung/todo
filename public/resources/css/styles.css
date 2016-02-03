@@ -20,6 +20,11 @@ h6 {
   font-weight: 700;
 }
 
+.btn:focus,
+.btn:active {
+  outline: none !important;
+}
+
 input[type=checkbox].css-checkbox {
   position: absolute;
   z-index: -1000;
@@ -461,4 +466,18 @@ section:first-child {
 
 .completed-list li .completed {
   text-decoration: line-through;
+}
+
+#show-completed {
+  background-color: rgba(102, 137, 100, 0.75);
+  border: none;
+  color: white;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+#show-completed:hover {
+  background-color: rgba(102, 137, 100, 0.75);
 }
