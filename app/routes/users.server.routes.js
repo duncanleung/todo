@@ -3,7 +3,7 @@
 // var users = require('../../app/controllers/users.server.controller');
 
 var User = require('../../app/models/user.server.model.js'),
-  passport = require('passport');
+    passport = require('passport');
 
 var getErrorMessage = function(err) {
   var message = '';

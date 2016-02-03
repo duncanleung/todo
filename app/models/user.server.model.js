@@ -1,9 +1,13 @@
 // Required in /app/config/mongoose.js
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
     bcrypt = require('bcrypt-nodejs');
 
+var Schema = mongoose.Schema;
+
+
+// Set up User Schema
+// ==============================
 var UserSchema = new Schema({
   name: String,
   email: {
@@ -62,4 +66,4 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
   );
 };
 
-mongoose.model('User', UserSchema);
+module.exports = mongoose.model('User', UserSchema);
