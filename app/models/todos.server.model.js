@@ -3,6 +3,8 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
+// Set up Todo Schema
+// ==============================
 var TodoSchema = new Schema({
   created: {
     type: Date,
@@ -29,4 +31,4 @@ var TodoSchema = new Schema({
   }
 });
 
-mongoose.model('Todo', TodoSchema);
+module.exports = mongoose.model('Todo', TodoSchema);
