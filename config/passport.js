@@ -1,11 +1,11 @@
 // Required in server.js
 
-var passport = require('passport'),
-    mongoose = require('mongoose');
+var User = require('../app/models/user.server.model.js');
 
-module.exports = function() {
-  var User = mongoose.model('User');
+module.exports = function(passport) {
 
+  // Sessions Setup - Persistent Login
+  // ==============================
   passport.serializeUser(function(user, done) {
     done(null, user.id);
   });
@@ -20,6 +20,8 @@ module.exports = function() {
     );
   });
 
+  // Login Strategies Setup
+  // ==============================
   require('./strategies/local.js')();
   require('./strategies/facebook.js')();
 };
