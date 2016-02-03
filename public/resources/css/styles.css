@@ -468,7 +468,12 @@ section:first-child {
   text-decoration: line-through;
 }
 
-#show-completed {
+#list-buttons {
+  position: relative;
+}
+
+#list-buttons #show-completed,
+#list-buttons #clear-completed {
   background-color: rgba(102, 137, 100, 0.75);
   border: none;
   color: white;
@@ -478,6 +483,17 @@ section:first-child {
   letter-spacing: 1px;
 }
 
-#show-completed:hover {
+#list-buttons #show-completed:hover,
+#list-buttons #clear-completed:hover {
   background-color: rgba(102, 137, 100, 0.75);
+}
+
+#list-buttons #clear-completed {
+  position: absolute;
+  right: 0;
+  background-color: rgba(231, 76, 60, 0.75);
+}
+
+#list-buttons #clear-completed:hover {
+  background-color: rgba(231, 76, 60, 0.75);
 }

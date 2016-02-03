@@ -492,20 +492,34 @@ section:first-child {
 // Todo List Styles
 // ==================================
 
-#show-completed {
-  background-color: rgba(102,137,100,0.75);
-  border: none;
-  color: white;
-  font-weight: 200;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 1px;
+#list-buttons {
+  position: relative;
 
-  &:hover {
+  #show-completed,
+  #clear-completed {
     background-color: rgba(102,137,100,0.75);
+    border: none;
+    color: white;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+
+    &:hover {
+      background-color: rgba(102,137,100,0.75);
+    }
+  }
+
+  #clear-completed {
+    position: absolute;
+    right: 0;
+    background-color: rgba(231, 76, 60, 0.75);
+
+    &:hover {
+      background-color: rgba(231, 76, 60, 0.75);
+    }
   }
 }
-
 
 
 

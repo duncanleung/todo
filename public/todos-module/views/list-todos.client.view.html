@@ -75,14 +75,14 @@
       </ul>
 
       <!-- Show Only When There are Completed Todos -->
-      <section ng-cloak ng-show="Todos.completedCount >= 1">
+      <section id="list-buttons" ng-cloak ng-show="Todos.completedCount >= 1">
         <div class="container">
           <div class="row">
             <button class="btn btn-default" ng-model="Todos.showCompleted" ng-init="Todos.showCompleted=false" id="show-completed" ng-click="Todos.showCompleted = !Todos.showCompleted">
               Show Completed To-Dos ({{ Todos.completedCount }})
             </button>
 
-            <button class="btn btn-default" id="clear-completed" ng-click="Todos.clearCompleted()" ng-show="Todos.completedCount"> Clear Completed Todos</button>
+            <button class="btn btn-default" id="clear-completed" ng-click="Todos.clearCompleted()" ng-show="Todos.showCompleted && Todos.completedCount"><span class="fa fa-trash-o"></span> Clear Completed Todos</button>
           </div>
         </div>
       </section>
