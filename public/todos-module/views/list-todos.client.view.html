@@ -77,17 +77,17 @@
       <!-- Show Only When There are Completed Todos -->
       <section ng-cloak ng-show="Todos.completedCount >= 1">
         <div class="container">
-          <span>Show completed:</span>
-          <input type="checkbox" class="css-checkbox" ng-model="Todos.showcompleted" ng-init="Todos.showcompleted=true" id="show-completed">
-          <label class="css-label" for="show-completed"></label>
+          <button class="btn btn-default" ng-model="Todos.showCompleted" ng-init="Todos.showCompleted=false" id="show-completed" ng-click="Todos.showCompleted = !Todos.showCompleted">
+            Show Completed To-Dos ({{ Todos.completedCount }})
+          </button>
 
-          <button id="clear-completed" ng-click="Todos.clearCompleted()" ng-show="Todos.completedCount"> Clear Completed Todos ({{ Todos.completedCount }})</button>
+          <button class="btn btn-default" id="clear-completed" ng-click="Todos.clearCompleted()" ng-show="Todos.completedCount"> Clear Completed Todos</button>
         </div>
       </section>
 
       <!-- Completed Todo Items -->
       <ul class="completed-list">
-        <li ng-repeat="todo in Todos.todos" ng-show="Todos.showcompleted && todo.completed">
+        <li ng-repeat="todo in Todos.todos" ng-show="Todos.showCompleted && todo.completed">
           <div class="todo-content">
             <input type="checkbox" class="css-checkbox" ng-change="todo.$update()" ng-model="todo.completed" id="{{todo._id}}">
             <label class="css-label" for="{{todo._id}}"></label>
