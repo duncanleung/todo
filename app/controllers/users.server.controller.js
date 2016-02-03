@@ -26,16 +26,16 @@ var User = require('mongoose').model('User'),
 //   return message;
 // };
 
-// Middleware to run Passport req.isAuthenticated()
-// If user is not logged in, send 401
-exports.requiresLogin = function(req, res, next) {
-  if(!req.isAuthenticated()) {
-    return res.status(401).send({
-      message: 'User is not logged in.'
-    });
-  }
-  next();
-}
+// // Middleware to run Passport req.isAuthenticated()
+// // If user is not logged in, send 401
+// exports.requiresLogin = function(req, res, next) {
+//   if(!req.isAuthenticated()) {
+//     return res.status(401).send({
+//       message: 'User is not logged in.'
+//     });
+//   }
+//   next();
+// };
 
 // // If user is not logged in then show Login
 // // Otherwise redirect to '/' (Angular app)
