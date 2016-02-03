@@ -1,6 +1,5 @@
 // Required in /app/config/express.js
 
-// var users = require('../../app/controllers/users.server.controller'),
 var Todo = require('../../app/models/todos.server.model.js'),
     todos = require('../../app/controllers/todos.server.controller');
 
@@ -136,50 +135,3 @@ module.exports = function(app) {
         });
   });
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
