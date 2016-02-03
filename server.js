@@ -27,7 +27,7 @@ require('./config/passport.js')(passport);
 mongoose.connect(config.db);
 
 app.use(morgan('dev'));
-  
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

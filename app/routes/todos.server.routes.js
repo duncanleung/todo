@@ -1,7 +1,7 @@
 // Required in /app/config/express.js
 
-var Todo = require('../../app/models/todos.server.model.js'),
-    todos = require('../../app/controllers/todos.server.controller');
+var Todo = require('../../app/models/todos.server.model.js')
+    /*todos = require('../../app/controllers/todos.server.controller')*/;
 
 // Middleware to run Passport req.isAuthenticated()
 // If user is not logged in, send 401
