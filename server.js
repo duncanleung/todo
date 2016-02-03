@@ -44,11 +44,19 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
-// Routes
 app.use(express.static('./public'));
 
 // Server Routes
-require('./app/routes/index.server.routes.js')(app);
+// ==============================
+app.get('/', function(req, res) {
+  res.render('index',
+    {
+      title: 'ToDo App',
+      user: JSON.stringify(req.user)
+    }
+  );
+});
+
 require('./app/routes/users.server.routes.js')(app);
 require('./app/routes/todos.server.routes.js')(app);
 
