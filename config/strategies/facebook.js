@@ -3,8 +3,46 @@
 var passport = require('passport'),
   url = require('url'),
   FacebookStrategy = require('passport-facebook').Strategy,
-  config = require('../config'),
-  users = require('../../app/controllers/users.server.controller');
+  config = require('../config');
+
+var User = require('../../app/models/user.server.model.js');
+/*var users = require('../../app/controllers/users.server.controller');*/
+
+var saveOAuthUserProfile = function(req, profile, done) {
+  User.findOne({
+      provider: profile.provider,
+      providerId: profile.providerId
+    },
+    function(err, user) {
+      if (err) {
+        return done(err);
+      }
+      else {
+        if (!user) {
+          var possibleUsername = profile.username || ((profile.email) ? profile.email.split('@')[0] : '');
+          
+          User.findUniqueUsername(possibleUsername, null, function(availableUsername) {
+            profile.username = availableUsername;
+            user = new User(profile);
+
+            user.save(function(err) {
+              if (err) {
+                var message = _this.getErrorMessage(err);
+                req.flash('error', message);
+                return res.redirect('/signup');
+              }
+
+              return done(err, user);
+            });
+          });
+        }
+        else {
+          return done(err, user);
+        }
+      }
+    }
+  );
+};
 
 module.exports = function() {
   passport.use(new FacebookStrategy({
@@ -28,6 +66,6 @@ module.exports = function() {
       providerData: providerData
     };
 
-    users.saveOAuthUserProfile(req, providerUserProfile, done);
+    User.saveOAuthUserProfile(req, providerUserProfile, done);
   }));
 };
