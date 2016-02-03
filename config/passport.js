@@ -23,5 +23,4 @@ module.exports = function(passport) {
   // Login Strategies Setup
   // ==============================
   require('./strategies/local.js')();
-  require('./strategies/facebook.js')();
 };
