@@ -19,7 +19,7 @@ $text-dark-gray: #777;
 }
 
 body {
-    overflow-x: hidden;
+    overflow: hidden;
     font-family:'Roboto', sans-serif;
 }
 
@@ -424,10 +424,12 @@ section:first-child {
 
 // Create New Todo Input Styles
 // ==================================
-.background {
+.todo-main {
   background-image: url('/resources/img/background.jpg');
   background-size: cover;
   height: 100vh;
+  overflow: scroll;
+  padding-bottom: 80px;
 }
 
 .new-todo {

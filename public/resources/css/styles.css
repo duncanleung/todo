@@ -3,7 +3,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow: hidden;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -394,10 +394,12 @@ section:first-child {
   color: #65b01b;
 }
 
-.background {
+.todo-main {
   background-image: url("/resources/img/background.jpg");
   background-size: cover;
   height: 100vh;
+  overflow: scroll;
+  padding-bottom: 80px;
 }
 
 .new-todo {
