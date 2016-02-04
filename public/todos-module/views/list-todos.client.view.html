@@ -58,7 +58,7 @@
   <section ng-init="Todos.find()">
     <div class="container">
       <div>
-        <div class="mark-all" ng-init="Todos.toggleAll=false" ng-click="Todos.checkAll()" ng-show="Todos.todos.length">
+        <div class="mark-all" ng-init="Todos.toggleAll=false" ng-click="Todos.checkAll()" ng-show="Todos.todos.length && Todos.remainingCount">
           <div>
             <span class="fa fa-check-square-o"></span>
             <p>Mark All Todos as Complete</p>
