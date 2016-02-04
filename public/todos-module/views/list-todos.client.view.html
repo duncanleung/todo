@@ -57,9 +57,13 @@
   <!-- List Todo Items -->
   <section ng-init="Todos.find()">
     <div class="container">
-      <div class="mark-all">
-        <input id="complete-all" type="checkbox" class="css-checkbox" ng-model="toggleAll" ng-click="Todos.checkAll(toggleAll)">
-        <label class="css-label" for="complete-all">Mark All Todos as Complete</label>
+      <div>
+        <div class="mark-all" ng-init="Todos.toggleAll=false" ng-click="Todos.checkAll()" ng-show="Todos.todos.length">
+          <div>
+            <span class="fa fa-check-square-o"></span>
+            <p>Mark All Todos as Complete</p>
+          </div>
+        </div>
       </div>
       <!-- Todo List -->
       <div class="list-body">

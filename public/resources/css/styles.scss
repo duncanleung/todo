@@ -378,6 +378,50 @@ section:first-child {
   margin-top: 50px;
 }
 
+// Toglle Mark All Styles
+// ==================================
+
+  .mark-all {
+    display: block;
+    position: relative;
+    height: 30px;
+    background-color: white;
+    margin-top: 30px;
+    padding: 5px 0 0px 15px;
+
+    div {
+      position: absolute;
+      left: 17px;
+      top: 7px;
+      cursor: pointer;
+      
+      .fa {
+        transition: all 0.2s ease-in-out;
+      }
+
+      p {
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 14px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.2s ease-in-out;
+      }
+
+      &:hover {
+        .fa {
+          transform: scale(1.2);
+          color: $primary-green;
+        }
+
+        p {
+          color: $primary-green;
+        }
+      }
+    }
+  }
+
 // Create New Todo Input Styles
 // ==================================
 .background {
@@ -506,7 +550,6 @@ section:first-child {
     
     .flex {
       display: flex;
-      flex-direction: row;
 
       strong {
         margin-right: 5px;

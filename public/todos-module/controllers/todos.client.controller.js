@@ -60,9 +60,11 @@ angular.module('todos').controller('TodosController', ['$scope', '$routeParams',
       }
     };
 
-    vm.checkAll = function(toggleAll) {
+    vm.checkAll = function() {
+      vm.toggleAll = !vm.toggleAll;
+      
       angular.forEach(vm.todos, function(todo) {
-        todo.completed = toggleAll;
+        todo.completed = vm.toggleAll;
         todo.$update();
       });
     };

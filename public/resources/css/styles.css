@@ -352,6 +352,48 @@ section:first-child {
   margin-top: 50px;
 }
 
+.mark-all {
+  display: block;
+  position: relative;
+  height: 30px;
+  background-color: white;
+  margin-top: 30px;
+  padding: 5px 0 0px 15px;
+}
+
+.mark-all div {
+  position: absolute;
+  left: 17px;
+  top: 7px;
+  cursor: pointer;
+}
+
+.mark-all div .fa {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.mark-all div p {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.mark-all div:hover .fa {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #65b01b;
+}
+
+.mark-all div:hover p {
+  color: #65b01b;
+}
+
 .background {
   background-image: url("/resources/img/background.jpg");
   background-size: cover;
@@ -487,11 +529,6 @@ section:first-child {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-      -ms-flex-direction: row;
-          flex-direction: row;
 }
 
 .list-body #todos-count .flex strong {
