@@ -62,17 +62,29 @@
         <label class="css-label" for="complete-all">Mark All Todos as Complete</label>
       </div>
       <!-- Todo List -->
-      <ul class="todo-list">
-        <li ng-repeat="todo in Todos.todos | filter:Todos.search" ng-show="!todo.completed">
-          <div class="todo-content">
-            <input type="checkbox" class="css-checkbox" ng-change="todo.$update()" ng-model="todo.completed" id="{{todo._id}}">
-            <label class="css-label" for="{{todo._id}}"></label>
-            <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
-            <small ng-bind="todo.comment" class="comment"></small>
-            <a href="#" ng-click="Todos.delete(todo)"><span class="fa fa-trash-o"></span></a>
+      <div class="list-body">
+        <ul class="todo-list">
+          <li ng-repeat="todo in Todos.todos | filter:Todos.search" ng-show="!todo.completed">
+            <div class="todo-content">
+              <input type="checkbox" class="css-checkbox" ng-change="todo.$update()" ng-model="todo.completed" id="{{todo._id}}">
+              <label class="css-label" for="{{todo._id}}"></label>
+              <a href="/todos/{{todo._id}}" ng-bind="todo.title" ng-class="todo.completed ? 'completed' : '' "></a>
+              <small ng-bind="todo.comment" class="comment"></small>
+              <a href="#" ng-click="Todos.delete(todo)"><span class="fa fa-trash-o"></span></a>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Count of Remaining Todos -->
+        <section ng-show="Todos.todos.length && Todos.remainingCount" id="todos-count">
+          <div class="container flex">
+            <strong id="items-remaining">{{ Todos.remainingCount }}</strong>
+            <div ng-pluralize count="Todos.remainingCount" when="{ one: 'item left', other: 'items left' }"></div>
+            <strong id="items-completed">{{ Todos.completedCount }}</strong>
+            <div ng-pluralize count="Todos.completedCount" when="{ one: 'item completed', other: 'items completed' }"></div>
           </div>
-        </li>
-      </ul>
+        </section>
+      </div>
 
       <!-- Show Only When There are Completed Todos -->
       <section id="list-buttons" ng-cloak ng-show="Todos.completedCount >= 1">
@@ -98,16 +110,6 @@
           </div>
         </li>
       </ul>
-    </div>
-  </section>
-  
-  <!-- Count of Remaining Todos -->
-  <section ng-show="Todos.todos.length">
-    <div class="container">
-      <span id="todos-count">
-        <strong>{{ Todos.remainingCount }}</strong>
-        <div ng-pluralize count="Todos.remainingCount" when="{ one: 'item left', other: 'items left' }"></div>
-      </span>
     </div>
   </section>
   

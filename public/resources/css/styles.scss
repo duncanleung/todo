@@ -447,8 +447,7 @@ section:first-child {
     display: inline-block;
     width: 100%;
     height: 50px;
-    margin: 3px 0 0 0;
-    border-radius: 2px;
+    border-top: 1px solid #e6e6e6;
     background-color: white;
 
     .todo-content {
@@ -480,7 +479,9 @@ section:first-child {
 
 .completed-list {
   li {
-    background-color: rgba(255, 255, 255, .6);
+    background-color: rgba(255, 255, 255, .5);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
 
     .completed {
       text-decoration: line-through;
@@ -489,11 +490,63 @@ section:first-child {
 }
 
 
-// Todo List Styles
+// List Footer Styles
+// ==================================
+.list-body {
+  position: relative;
+  margin-bottom: 10px;
+
+  #todos-count {
+    padding: 13px 0;
+    margin: -9px 0 30px;
+    background-color: white;
+    color: $text-dark-gray;
+    height: 40px;
+    border-top: 1px solid #e6e6e6;
+    
+    .flex {
+      display: flex;
+      flex-direction: row;
+
+      strong {
+        margin-right: 5px;
+      }
+
+      #items-completed {
+        margin-left: 20px;
+        color: lighten($text-dark-gray, 25%);
+
+        &+div {
+          color: lighten($text-dark-gray, 25%);          
+        }
+      }
+    }
+  }
+
+  #todos-count:before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+                0 8px 0 -3px #f6f6f6,
+                0 9px 1px -3px rgba(0, 0, 0, 0.2),
+                0 16px 0 -6px #f6f6f6,
+                0 17px 2px -6px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+
+// Todo Button Styles
 // ==================================
 
 #list-buttons {
   position: relative;
+  margin-bottom: 5px;
 
   #show-completed,
   #clear-completed {
