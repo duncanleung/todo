@@ -1,10 +1,16 @@
 {
   "name": "todo",
   "version": "1.0.0",
+  "engines": {
+    "node": "4.1.1",
+    "npm": "2.14.4"
+    },
   "description": "An Angular ToDo Web App with User Authentication",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -19,11 +25,13 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.2",
+    "bower": "^1.7.7",
     "connect-flash": "^0.1.1",
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "express-session": "^1.13.0",
     "mongoose": "^4.3.7",
+    "morgan": "^1.6.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.0.0",
     "passport-local": "^1.0.0"
@@ -31,7 +39,6 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
-    "gulp-sass": "^2.1.1",
-    "morgan": "^1.6.1"
+    "gulp-sass": "^2.1.1"
   }
 }
