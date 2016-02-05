@@ -100,6 +100,7 @@ module.exports = function(app) {
   });
 
   // Single /:userId Routes
+  // ==============================
   app.route('/users/:userId')
     // Retrieve single user
     .get(function(req, res) {

@@ -22,8 +22,7 @@ var UserSchema = new Schema({
   password: String,
   provider: String,
   providerId: String,
-  providerData: {},
-  todos: {}
+  providerData: {}
 });
 
 UserSchema.pre('save', function(next) {

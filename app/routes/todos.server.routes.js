@@ -1,7 +1,6 @@
 // Required in /app/config/express.js
 
-var Todo = require('../../app/models/todos.server.model.js')
-    /*todos = require('../../app/controllers/todos.server.controller')*/;
+var Todo = require('../../app/models/todos.server.model.js');
 
 // Middleware to run Passport req.isAuthenticated()
 // If user is not logged in, send 401
@@ -46,7 +45,7 @@ module.exports = function(app) {
     // If user is logged in then pull todos from Mongo
     .get(requiresLogin, function(req, res) {
           // Sort Todo by descending 'created' date
-          Todo.find().sort('-created').populate('creator', 'name username').exec(function(err, todos) {
+          Todo.find({creator: req.user._id}).sort('-created').populate('creator', 'name username').exec(function(err, todos) {
             if(err) {
               return res.status(400).send({
                 message: getErrorMessage(err)
@@ -80,7 +79,7 @@ module.exports = function(app) {
   app.route('/api/todos/:todoId')
     
     // Todo from req.todo that was attached by todoById middleware
-    .get(requiresLogin, function(req, res) {
+    .get(requiresLogin, hasAuthorization, function(req, res) {
         res.json(req.todo);
     })
     // Update Todo fetched by todoById

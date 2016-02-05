@@ -53,16 +53,11 @@ angular.module('todos').controller('TodosController', ['$scope', '$routeParams',
           }
         });
       }
-      else {
-        vm.todo.$remove(function() {
-          $location.path('todos');
-        });
-      }
     };
 
     vm.checkAll = function() {
       vm.toggleAll = !vm.toggleAll;
-      
+
       angular.forEach(vm.todos, function(todo) {
         todo.completed = vm.toggleAll;
         todo.$update();
