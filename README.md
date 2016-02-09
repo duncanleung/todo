@@ -35,7 +35,7 @@ TodoIt was my third project for [Orange County Code School](https://www.orangeco
 - Modularized AngularJS modules and controllers to separate functionality and improve code maintainability
 - Reusable AngularJS service with $resource to CRUD todo items with backend API
 
-###To Run an Instance of this App
+##To Run an Instance of this App
 *(Currently in Development!)*
 
 - Create `config/env/development.js`
@@ -55,8 +55,10 @@ module.exports = {
 ```
 
 - Run `bower install` to install frontend dependencies
-
 - Run `npm install` to install backend dependencies
-
 - Start the server with `node server.js` (*Default: http://localhost:3000*)
 
+![Todo Home Screen](http://www.duncanleung.com/portfolio/todo-github/todo-home.png)
+![Todo Signup Screen](http://www.duncanleung.com/portfolio/todo-github/todo-signup.png)
+![Todo Login Screen](http://www.duncanleung.com/portfolio/todo-github/todo-login.png)
+![Todo List Screen](http://www.duncanleung.com/portfolio/todo-github/todo-list.png)
