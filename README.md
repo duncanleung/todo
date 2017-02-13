@@ -58,7 +58,5 @@ module.exports = {
 - Run `npm install` to install backend dependencies
 - Start the server with `node server.js` (*Default: http://localhost:3000*)
 
-![Todo Home Screen](http://www.duncanleung.com/portfolio/todo-github/todo-home.png)
-![Todo Signup Screen](http://www.duncanleung.com/portfolio/todo-github/todo-signup.png)
-![Todo Login Screen](http://www.duncanleung.com/portfolio/todo-github/todo-login.png)
-![Todo List Screen](http://www.duncanleung.com/portfolio/todo-github/todo-list.png)
+![Todo List Screen](http://res.cloudinary.com/leungd/image/upload/v1486945775/github/todo-1.png)
+![Todo Signup Screen](http://res.cloudinary.com/leungd/image/upload/v1486945775/github/todo-2.png)
